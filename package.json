@@ -7,6 +7,7 @@
     "start": "nodemon src/index.js"
   },
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "express": "^4.16.4",
     "nunjucks": "^3.1.7",
     "pg": "^7.8.1",
