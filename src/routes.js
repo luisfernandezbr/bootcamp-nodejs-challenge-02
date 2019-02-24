@@ -12,6 +12,8 @@ const SessionController = require('./app/controllers/SessionController')
 
 routes.use('/app', authMiddleware)
 
+routes.get('/app/logout', SessionController.destroy)
+
 routes.get('/', guestMiddleware, SessionController.create)
 routes.post('/signin', SessionController.store)
 
