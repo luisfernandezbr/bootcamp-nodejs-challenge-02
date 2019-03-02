@@ -23,11 +23,12 @@ class AppointmentController {
   }
 
   async listAvailable (req, res) {
+    const { provider } = req.params
     const date = moment(parseInt(req.query.date))
 
     const appointmentList = await Appointment.findAll({
-      wehre: {
-        provider_id: req.params.provider,
+      where: {
+        provider_id: provider,
         date: {
           [Op.between]: [
             date.startOf('day').format(),
