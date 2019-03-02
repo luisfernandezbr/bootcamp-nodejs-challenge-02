@@ -10,6 +10,7 @@ const flashMiddleware = require('./app/middlewares/flash')
 
 const UserController = require('./app/controllers/UserController')
 const SessionController = require('./app/controllers/SessionController')
+const DashboardController = require('./app/controllers/DashboardController')
 
 routes.use(flashMiddleware)
 
@@ -23,9 +24,6 @@ routes.use('/app', authMiddleware)
 
 routes.get('/app/logout', SessionController.destroy)
 
-routes.get('/app/dashboard', (req, res) => {
-  console.log(req.session.user)
-  res.render('dashboard')
-})
+routes.get('/app/dashboard', DashboardController.list)
 
 module.exports = routes

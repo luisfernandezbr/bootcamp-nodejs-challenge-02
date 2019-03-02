@@ -1,6 +1,19 @@
 {% extends "_layouts/default.njk" %}
 
 {% block body %}
-  <h1>Olá, {{ user.name }}</h1>
-  <a href="/app/logout">Logout</a>
+  <div class="content">
+    <strong>Welcome, {{ user.name }}</strong>
+    <p>Schedule your haircut choosing a professional below:</p>
+    <ul class="providers">
+      {% for provider in providerList %}
+        <li class="provider">
+          <div>
+            <img src="" />
+            <strong>{{ provider.name }}</strong>
+          </div>
+          <a href="">+</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}
